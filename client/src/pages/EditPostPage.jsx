@@ -6,6 +6,8 @@ import { updatePost } from '../redux/features/post/postSlice'
 
 import axios from '../utils/axios'
 
+const PORT = process.env.PORT || 5000
+
 export const EditPostPage = () => {
     const [title, setTitle] = useState('')
     const [text, setText] = useState('')
@@ -65,7 +67,7 @@ export const EditPostPage = () => {
             <div className='flex object-cover py-2'>
                 {oldImage && (
                     <img
-                        src={`http://localhost:3002/${oldImage}`}
+                        src={`http://localhost:${PORT}/${oldImage}`}
                         alt={oldImage.name}
                     />
                 )}

@@ -21,6 +21,8 @@ import {
 } from '../redux/features/comment/commentSlice'
 import { CommentItem } from '../components/CommentItem'
 
+const PORT = process.env.PORT || 5000
+
 export const PostPage = () => {
     const [post, setPost] = useState(null)
     const [comment, setComment] = useState('')
@@ -99,7 +101,7 @@ export const PostPage = () => {
                         >
                             {post?.imgUrl && (
                                 <img
-                                    src={`http://localhost:3002/${post.imgUrl}`}
+                                    src={`http://localhost:${PORT}/${post.imgUrl}`}
                                     alt='img'
                                     className='object-cover w-full'
                                 />

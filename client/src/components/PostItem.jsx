@@ -3,6 +3,8 @@ import { AiFillEye, AiOutlineMessage } from 'react-icons/ai'
 import Moment from 'react-moment'
 import { Link } from 'react-router-dom'
 
+const PORT = process.env.PORT || 5000
+
 export const PostItem = ({ post }) => {
     if (!post) {
         return (
@@ -21,7 +23,7 @@ export const PostItem = ({ post }) => {
                 >
                     {post.imgUrl && (
                         <img
-                            src={`http://localhost:3002/${post.imgUrl}`}
+                            src={`http://localhost:${PORT}/${post.imgUrl}`}
                             alt='img'
                             className='object-cover w-full'
                         />
